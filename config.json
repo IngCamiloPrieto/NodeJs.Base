@@ -1,0 +1,54 @@
+{
+    "development": {
+        "config_id": "development",
+        "app_name": "POS API Cloud",
+        "app_desc": "POS API Cloud Service",
+        "jwt_expires_in": 600,
+        "jwt_key_pass": "miclaveultrasecreta123*",
+        "bdconfig_cnxstring": "postgres://apicloud:masterkey@localhost:5432/dbca",
+        "logger_config": "./local_logs_config.json",
+        "api_logs": "http://localhost:21541/api/v1/",
+        "unit_test" : {
+            "API_CLOUD_USERNAME": "company9999999",
+            "API_CLOUD_PASSWORD": "L!#CsVT3Bc$=dtxh"
+        }
+    },
+    "testing": {
+        "config_id": "testing",
+        "app_name": "POS API Cloud",
+        "app_desc": "POS API Cloud Service",
+        "jwt_expires_in": 600,
+        "jwt_key_pass": "miclaveultrasecreta123*",
+        "bdconfig_cnxstring": "postgres://apicloud:masterkey@localhost:5432/dbca",
+        "logger_config": "./local_logs_config.json",
+        "api_logs": "http://localhost:21541/api/v1/",
+        "unit_test" : {
+            "API_CLOUD_USERNAME": "company9999999",
+            "API_CLOUD_PASSWORD": "L!#CsVT3Bc$=dtxh"
+        }
+    },
+    "staging": {
+        "config_id": "staging",
+        "app_name": "POS API Cloud",
+        "app_desc": "POS API Cloud Service",
+        "jwt_expires_in": 600,
+        "jwt_key_pass": "miclaveultrasecreta123*",
+        "bdconfig_cnxstring": "postgres://apicloud:masterkey@localhost:5432/dbca",
+        "logger_config": "./local_logs_config.json",
+        "api_logs": "http://localhost:21541/api/v1/",
+        "unit_test" : {
+            "API_CLOUD_USERNAME": "company9999999",
+            "API_CLOUD_PASSWORD": "L!#CsVT3Bc$=dtxh"
+        }
+    },
+    "production": {
+        "config_id": "production",
+        "app_name": "POS API Cloud",
+        "app_desc": "POS API Cloud Service",
+        "jwt_expires_in": 600,
+        "jwt_key_pass": "miclaveultrasecreta123*",
+        "bdconfig_cnxstring": "postgres://apicloud:masterkey@localhost:5432/dbca",
+        "logger_config": "./local_logs_config.json",
+        "api_logs": "http://localhost:21541/api/v1/"
+    }
+}

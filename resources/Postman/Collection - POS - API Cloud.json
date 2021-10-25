@@ -1,0 +1,6305 @@
+{
+	"info": {
+		"_postman_id": "f745472f-49eb-4f02-b9e1-13cdff28af1a",
+		"name": "POS - API Cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Config (Initial parameterization)",
+			"item": [
+				{
+					"name": "Company",
+					"item": [
+						{
+							"name": "Get All Companies",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/v1/company?parameters={\"filter\":{\"isactive\":true},\"order\":{\"name\":\"ASC\"}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company"
+									],
+									"query": [
+										{
+											"key": "parameters",
+											"value": "{\"filter\":{\"isactive\":true},\"order\":{\"name\":\"ASC\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Company by Code SAP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/v1/company/{{code_sap}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company",
+										"{{code_sap}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Company Automated Test (Mocha & Chai)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"codesap\" : 9999999, \r\n    \"name\" : \"Company #9999999\",\r\n    \"username\" : \"company9999999\",\r\n    \"password\" : \"L!#CsVT3Bc$=dtxh\",\r\n    \"connectionstring\" : \"postgres://apicloud:masterkey@localhost:5432/dbcc_9999999\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/company",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Company Main (DTH)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"codesap\" : 1111111, \r\n    \"name\" : \"Company #1111111\",\r\n    \"username\" : \"company1111111\",\r\n    \"password\" : \"L!#CsVT3Bc$=dtxh\",\r\n    \"connectionstring\" : \"postgres://apicloud:masterkey@localhost:5432/dbcc_1111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/company",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Company Developer (Postman Inserts)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"codesap\" : 2222222, \r\n    \"name\" : \"Company #2222222\",\r\n    \"username\" : \"company2222222\",\r\n    \"password\" : \"&5nM20BjbuSx\",\r\n    \"connectionstring\" : \"postgres://apicloud:masterkey@localhost:5432/dbcc_2222222\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/company",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Company",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"password\" : \"&5nM20BjbuSx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/company/{{code_sap}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company",
+										"{{code_sap}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Company",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/v1/company/{{code_sap}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company",
+										"{{code_sap}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth JWT",
+			"item": [
+				{
+					"name": "Company (App POS or OPT)",
+					"item": [
+						{
+							"name": "Validate Company Main Credentials",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"company1111111\",\r\n    \"password\" : \"L!#CsVT3Bc$=dtxh\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/auth/app",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"app"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Company Developer Credentials",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"company2222222\",\r\n    \"password\" : \"&5nM20BjbuSx\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/auth/app",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"app"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Company Automated Test Credentials",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"company9999999\",\r\n    \"password\" : \"L!#CsVT3Bc$=dtxh\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/auth/app",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"app"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth (Login)",
+					"item": [
+						{
+							"name": "Validate User Credentials",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"user_id\" : \"e5904566-2e4c-4f33-85d1-ea56a4d409f5\",\r\n    \"password\": \"L!#CsVT3Bc$=dtxh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/auth/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate User Credentials with Octan v3",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"user_id\" : \"8a9edd81-104b-4742-96cd-19f3f343c9c8\",\r\n    \"password\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/auth/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync User List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"users\" : [\r\n        { \r\n            \"user_id\" : \"913fe7a7-3147-439a-b70e-e6e4fc5a38c9\",\r\n            \"reference_code\" : \"REF4332313\",\r\n            \"first_name\" : \"Juan\", \r\n            \"surname\" : \"Carlos\",\r\n            \"last_name\" : \"Gallego\",\r\n            \"password\" : \"L!#CsVT3Bc$=dtxh\",\r\n            \"password_encoding_type\" : 0,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"user_id\" : \"e5904566-2e4c-4f33-85d1-ea56a4d409f5\",\r\n            \"reference_code\" : \"REF4332314\",\r\n            \"first_name\" : \"Ana\", \r\n            \"surname\" : \"Maria\",\r\n            \"last_name\" : \"Morales\",\r\n            \"password\" : \"L!#CsVT3Bc$=dtxh\",\r\n            \"password_encoding_type\" : 0,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt User List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"users\" : [ \r\n        {\r\n            \"user_id\" : \"d154632e-2f28-4f1f-af46-3e078cad61a4\",\r\n            \"reference_code\": \"REF4332312\",\r\n            \"first_name\": \"Pepillo\",\r\n            \"surname\": \"Loquillo\",\r\n            \"last_name\": \"Muy Pillo\",\r\n            \"password\": \"L!#CsVT3Bc$=dtxh\",\r\n            \"password_encoding_type\": 0,\r\n            \"status\": 1,\r\n            \"is_active\": true\r\n        },\r\n        {\r\n            \"user_id\" : \"9e8d8832-c4b4-4d21-a610-47edbe662faf\",\r\n            \"reference_code\": \"REF4332313\",\r\n            \"first_name\": \"Juan\",\r\n            \"surname\": \"Sebastian\",\r\n            \"last_name\": \"Gallego\",\r\n            \"password\": \"24CF92D092A2BFD3965F8401321D3EC2135887C9\",\r\n            \"password_encoding_type\": 1,\r\n            \"status\": 1,\r\n            \"is_active\": true\r\n        },\r\n        { \r\n            \"user_id\" : \"6528a426-5c23-49dc-93b0-8ddfe11a66e9\",\r\n            \"reference_code\" : \"JLLUSSA\",\r\n            \"first_name\" : \"Jordi\", \r\n            \"surname\" : \"Llussa\",\r\n            \"last_name\" : \"\",\r\n            \"password\" : \"A093D0CB47AFAA81BE6E481D5DF1541B8F63C8E5\",\r\n            \"password_encoding_type\" : 1,\r\n            \"status\": 1,\r\n            \"is_active\" : false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/user?parameters={\"filter\":{\"isactive\":true},\"order\":{\"firstname\":\"ASC\"},\"page\":1,\"pagesize\":10}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"filter\":{\"isactive\":true},\"order\":{\"firstname\":\"ASC\"},\"page\":1,\"pagesize\":10}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/user/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user_id\" : \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\",\r\n    \"reference_code\" : \"REF4332312\",\r\n    \"first_name\" : \"Pepillo\", \r\n    \"surname\" : \"Loquillo\",\r\n    \"last_name\" : \"Pillo\",\r\n    \"password\" : \"L!#CsVT3Bc$=dtxh\",\r\n    \"password_encoding_type\" : 1,\r\n    \"status\": 1,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Password with Octan v3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user_id\" : \"8a9edd81-104b-4742-96cd-19f3f343c9c8\",\r\n    \"reference_code\" : \"JLLUSSA\",\r\n    \"first_name\" : \"Jordi\", \r\n    \"surname\" : \"Llussa\",\r\n    \"last_name\" : \"\",\r\n    \"password\" : \"A093D0CB47AFAA81BE6E481D5DF1541B8F63C8E5\",\r\n    \"password_encoding_type\" : 1,\r\n    \"status\": 1,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference_code\": \"REF4332313\",\r\n    \"first_name\" : \"Juan\", \r\n    \"surname\" : \"Camilo\",\r\n    \"last_name\" : \"Gallego\",\r\n    \"password\" : \"24CF92D092A2BFD3965F8401321D3EC2135887C9\",\r\n    \"password_encoding_type\" : 1,\r\n    \"status\": 1,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/user/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/user/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Site (Establishment)",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Site List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sites\" : [\r\n        { \r\n            \"site_id\": \"3894b96e-2846-40bb-804e-87b1552f2b1c\",\r\n            \"code\": \"1201\",\r\n            \"name\": \"Establishment West\",\r\n            \"registration_code\": \"Establishment#2\",\r\n            \"key\": \"e4b9b24b-1a9e-4544-b135-3aaba956a161\",\r\n            \"inet_address\": \"201.23.56.44\",\r\n            \"alvicsrv_local_address\": \"localhost\",\r\n            \"alvicsrv_local_port\": 90000,\r\n            \"alvicsrv_inet_port\": 50000,\r\n            \"forecourt_controller_alvicsrv_id\": 1,\r\n            \"credit_balance_overdrawn\": \"1.00\",\r\n            \"is_active\": true,\r\n            \"status\": 1\r\n        },\r\n        { \r\n            \"site_id\": \"fa74efab-88c5-4664-a636-ed437d5531b1\",\r\n            \"code\": \"1202\",\r\n            \"name\": \"Establishment East\",\r\n            \"registration_code\": \"Establishment#3\",\r\n            \"key\": \"5f5c77fa-8335-47bd-ace0-eba95d0380b2\",\r\n            \"inet_address\": \"201.23.56.45\",\r\n            \"alvicsrv_local_address\": \"localhost\",\r\n            \"alvicsrv_local_port\": 70000,\r\n            \"alvicsrv_inet_port\": 50000,\r\n            \"forecourt_controller_alvicsrv_id\": 1,\r\n            \"credit_balance_overdrawn\": \"1.00\",\r\n            \"is_active\": true,\r\n            \"status\": 1\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/site",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"site"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Site List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sites\" : [ \r\n        {\r\n            \"site_id\" : \"38f8e12c-31bb-4048-9f0b-f0d4a2b83b34\",\r\n            \"code\" : 1201,\r\n            \"name\" : \"Establishment West\",\r\n            \"registration_code\" : \"Establishment#2\",\r\n            \"inet_address\" : \"201.23.56.44\",\r\n            \"alvicsrv_local_address\" : \"192.168.10.10\",\r\n            \"alvicsrv_local_port\" : 50000,\r\n            \"alvicsrv_inet_port\" : 50000,\r\n            \"forecourt_controller_alvicsrv_id\" : 1,\r\n            \"credit_balance_overdrawn\": 1.0,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        },\r\n        {\r\n            \"site_id\" : \"f83e52c6-e5a3-4dd5-b27a-1185872db9b3\",\r\n            \"code\" : 1202,\r\n            \"name\" : \"Establishment East\",\r\n            \"registration_code\" : \"Establishment#3\",\r\n            \"inet_address\" : \"201.23.56.45\",\r\n            \"alvicsrv_local_address\" : \"192.168.10.11\",\r\n            \"alvicsrv_local_port\" : 50000,\r\n            \"alvicsrv_inet_port\" : 50000,\r\n            \"forecourt_controller_alvicsrv_id\" : 1,\r\n            \"credit_balance_overdrawn\": 1.0,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/site",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"site"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Sites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/site?parameters={\"filter\":{\"isactive\":true},\"order\":{\"name\":\"ASC\"},\"page\":1,\"pagesize\":10}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"site"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"filter\":{\"isactive\":true},\"order\":{\"name\":\"ASC\"},\"page\":1,\"pagesize\":10}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Site by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/v1/site/{{site_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"v1",
+								"site",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users by Site Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/v1/site/{{site_id}}/users?parameters={\"order\":{\"lastname\":\"ASC\"}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"v1",
+								"site",
+								"{{site_id}}",
+								"users"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"order\":{\"lastname\":\"ASC\"}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"code\" : 1200,\r\n    \"name\" : \"Establishment\",\r\n    \"registration_code\" : \"Establishment#1\",\r\n    \"inet_address\" : \"201.23.56.43\",\r\n    \"alvicsrv_local_address\" : \"localhost\",\r\n    \"alvicsrv_local_port\" : 50000,\r\n    \"alvicsrv_inet_port\" : 50000,\r\n    \"forecourt_controller_alvicsrv_id\" : 1,\r\n    \"credit_balance_overdrawn\": 1.0,\r\n    \"is_active\" : true,\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/v1/site",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"v1",
+								"site"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\" : 1200,\r\n    \"name\" : \"Establishment\",\r\n    \"registration_code\" : \"Establishment#1\",\r\n    \"inet_address\" : \"201.23.56.43\",\r\n    \"alvicsrv_local_address\" : \"localhost\",\r\n    \"alvicsrv_local_port\" : 50000,\r\n    \"alvicsrv_inet_port\" : 50000,\r\n    \"forecourt_controller_alvicsrv_id\" : 1,\r\n    \"credit_balance_overdrawn\": 1.0,\r\n    \"is_active\" : true,\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/v1/site/{{site_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"v1",
+								"site",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4004/api/v1/site/{{site_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"v1",
+								"site",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User Site (User Permisions)",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync User Assignment List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAssignments\" : [\r\n        { \r\n            \"user_id\" : \"913fe7a7-3147-439a-b70e-e6e4fc5a38c9\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\", \r\n            \"is_active\" : true\r\n        },      \r\n        { \r\n            \"user_id\" : \"e5904566-2e4c-4f33-85d1-ea56a4d409f5\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\", \r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/userassignment",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"userassignment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt User Assignment List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAssignments\" : [ \r\n       { \r\n            \"user_id\" : \"913fe7a7-3147-439a-b70e-e6e4fc5a38c9\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\", \r\n            \"is_active\" : true\r\n        },      \r\n        { \r\n            \"user_id\" : \"e5904566-2e4c-4f33-85d1-ea56a4d409f5\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\", \r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/userassignment",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"userassignment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All User Assignments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/userassignment?parameters={\"order\":{\"lastupdate\":\"ASC\"},\"page\":1,\"pagesize\":10}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userassignment"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"order\":{\"lastupdate\":\"ASC\"},\"page\":1,\"pagesize\":10}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Assignments by User Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/userassignment/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userassignment",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user_id\" : \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\",\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/userassignment",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userassignment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt User Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/userassignment/{{user_id}}/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userassignment",
+								"{{user_id}}",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/userassignment/{{user_id}}/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userassignment",
+								"{{user_id}}",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Terminal",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Terminal List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"terminals\" : [\r\n        { \r\n            \"terminal_id\": \"12201308-4075-41dd-8f11-8127c7900504\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"code\" : \"Terminal1\", \r\n            \"name\" : \"Terminal 1\",\r\n            \"terminal_alvicsrv_id\" : 345674,\r\n            \"forecourt_controller_terminal_id\" : 345674,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"terminal_id\": \"9d840f50-c52a-4b74-8cac-13f307bfc225\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"code\" : \"Terminal2\", \r\n            \"name\" : \"Terminal 2\",\r\n            \"terminal_alvicsrv_id\" : 345674,\r\n            \"forecourt_controller_terminal_id\" : 345674,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/terminal",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"terminal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Terminal List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"terminals\" : [\r\n        { \r\n            \"terminal_id\": \"12201308-4075-41dd-8f11-8127c7900504\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"code\" : \"Terminal1\", \r\n            \"name\" : \"Terminal 1\",\r\n            \"terminal_alvicsrv_id\" : 111111,\r\n            \"forecourt_controller_terminal_id\" : 222222,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"terminal_id\": \"f2232159-211e-4cbd-9006-be4f9f3771a5\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"code\" : \"Terminal2\", \r\n            \"name\" : \"Terminal 2\",\r\n            \"terminal_alvicsrv_id\" : 333333,\r\n            \"forecourt_controller_terminal_id\" : 444444,\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/terminal",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"terminal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Terminals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/terminal?parameters={\"filter\":{\"isactive\":true},\"order\":{\"name\":\"ASC\"},\"page\":1,\"pagesize\":10}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"filter\":{\"isactive\":true},\"order\":{\"name\":\"ASC\"},\"page\":1,\"pagesize\":10}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/terminal/{{terminal_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal",
+								"{{terminal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terminal with Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/terminal/{{terminal_id}}/pos?parameters={\"order\":{\"lastname\":\"ASC\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal",
+								"{{terminal_id}}",
+								"pos"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"order\":{\"lastname\":\"ASC\"}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fuelling Points by Terminal id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/terminal/{{terminal_id}}/fuellingpoint?parameters={\"order\":{\"description\":\"ASC\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal",
+								"{{terminal_id}}",
+								"fuellingpoint"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"order\":{\"description\":\"ASC\"}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Terminal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"terminal_id\": \"f2232159-211e-4cbd-9006-be4f9f3771a8\",\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"code\" : \"Terminal3\", \r\n    \"name\" : \"Terminal 3\",\r\n    \"terminal_alvicsrv_id\" : 345674,\r\n    \"forecourt_controller_terminal_id\" : 345674,\r\n    \"status\": 1,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/terminal",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Terminal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"code\" : \"Main Terminal\", \r\n    \"name\" : \"Main Terminal\",\r\n    \"terminal_alvicsrv_id\" : 77777,\r\n    \"forecourt_controller_terminal_id\" : 888888,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/terminal/{{terminal_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal",
+								"{{terminal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Terminal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/terminal/{{terminal_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"terminal",
+								"{{terminal_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POS Config",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Fuelling Point List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"config\" : [\r\n        {\r\n            \"site_id\": \"a61954a9-3cbb-40f9-a091-3cb22b95bb66\",\r\n            \"dispenser_column_count\": 4,\r\n            \"amount_button_1_amount\": 10,\r\n            \"amount_button_2_amount\": 20,\r\n            \"amount_button_3_amount\": 30,\r\n            \"amount_button_4_amount\": 50,\r\n            \"is_active\": true\r\n        },\r\n        {\r\n            \"site_id\": \"3894b96e-2846-40bb-804e-87b1552f2b1c\",\r\n            \"dispenser_column_count\": 4,\r\n            \"amount_button_1_amount\": 10,\r\n            \"amount_button_2_amount\": 20,\r\n            \"amount_button_3_amount\": 50,\r\n            \"amount_button_4_amount\": 100,\r\n            \"is_active\": true\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/posconfig",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"posconfig"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All POS Configurations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/posconfig?parameters={\"filter\":{\"isactive\":true},\"order\":{\"last_update\":\"ASC\"},\"page\":1,\"pagesize\":10}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posconfig"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"filter\":{\"isactive\":true},\"order\":{\"last_update\":\"ASC\"},\"page\":1,\"pagesize\":10}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get POS Configuration by Site Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/posconfig/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posconfig",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add POS Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"dispenser_column_count\" : 4, \r\n    \"amount_button_1_amount\": 10,\r\n    \"amount_button_2_amount\": 20,\r\n    \"amount_button_3_amount\": 30,\r\n    \"amount_button_4_amount\": 50,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/posconfig",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt POS Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dispenser_column_count\" : 2,\r\n    \"amount_button_1_amount\": 10,\r\n    \"amount_button_2_amount\": 20,\r\n    \"amount_button_3_amount\": 30,\r\n    \"amount_button_4_amount\": 50,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/posconfig/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posconfig",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove POS Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/posconfig/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posconfig",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fuelling Point",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Fuelling Point List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fuellingPoints\" : [\r\n        { \r\n            \"fuelling_point_id\": \"bcf923f8-69d1-47ad-8291-b46a72f03e69\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"code\" : \"FuellingPoint4\", \r\n            \"description\" : \"Fuelling Point 4\",\r\n            \"forecourt_controller_fuelling_point_id\" : 34545,\r\n            \"is_active\" : true\r\n        },\r\n        {\r\n            \"fuelling_point_id\": \"2b1ebbea-1b74-4d22-9f5d-75e90287ca75\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"code\" : \"FuellingPoint7\", \r\n            \"description\" : \"Fuelling Point 7\",\r\n            \"forecourt_controller_fuelling_point_id\" : 345656,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/fuellingpoint",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"fuellingpoint"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Fuelling Point List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"fuellingPoints\" : [\r\n               { \r\n            \"fuelling_point_id\": \"bcf923f8-69d1-47ad-8291-b46a72f03e69\",\r\n            \"site_id\" : \"68b80f2a-6f09-4839-a0b3-99e78c1a4c75\",\r\n            \"code\" : \"FuellingPoint4\", \r\n            \"description\" : \"Fuelling Point # 4\",\r\n            \"forecourt_controller_fuelling_point_id\" : 34545,\r\n            \"is_active\" : true\r\n        },\r\n        {\r\n            \"fuelling_point_id\": \"2b1ebbea-1b74-4d22-9f5d-75e90287ca75\",\r\n            \"site_id\" : \"68b80f2a-6f09-4839-a0b3-99e78c1a4c75\",\r\n            \"code\" : \"FuellingPoint7\", \r\n            \"description\" : \"Fuelling Point # 7\",\r\n            \"forecourt_controller_fuelling_point_id\" : 345656,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/fuellingpoint",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"fuellingpoint"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Fuelling Points",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpoint?parameters={\"filter\":{\"isactive\":true},\"order\":{\"code\":\"ASC\"},\"page\":1,\"pagesize\":50}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpoint"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"filter\":{\"isactive\":true},\"order\":{\"code\":\"ASC\"},\"page\":1,\"pagesize\":50}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fuelling Point by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpoint/{{fuelling_point_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpoint",
+								"{{fuelling_point_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fuelling Point",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"fuelling_point_id\": \"6b7e632c-cae7-11eb-9b33-df44e0037246\",\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"code\" : \"5\", \r\n    \"description\" : \"Fuelling Point 5\",\r\n    \"forecourt_controller_fuelling_point_id\" : 345674,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpoint",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Fuelling Point",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"code\" : \"50\", \r\n    \"description\" : \"Fuelling Point 50\",\r\n    \"forecourt_controller_fuelling_point_id\" : 345674,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpoint/{{fuelling_point_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpoint",
+								"{{fuelling_point_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Fuelling Point",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpoint/{{fuelling_point_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpoint",
+								"{{fuelling_point_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fuelling Point Terminal",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Fuelling Point Assignment List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fuellingPointAssignments\" : [\r\n        { \r\n            \"fuelling_point_id\": \"bcf923f8-69d1-47ad-8291-b46a72f03e69\",\r\n            \"terminal_id\" : \"12201308-4075-41dd-8f11-8127c7900504\",\r\n            \"is_active\" : true\r\n        },\r\n        {\r\n            \"fuelling_point_id\": \"2b1ebbea-1b74-4d22-9f5d-75e90287ca75\",\r\n            \"terminal_id\" : \"f2232159-211e-4cbd-9006-be4f9f3771a8\",\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/fuellingpointterminal",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"fuellingpointterminal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Fuelling Points Assignment List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fuellingPointAssignments\" : [\r\n        { \r\n            \"fuelling_point_id\": \"bcf923f8-69d1-47ad-8291-b46a72f03e69\",\r\n            \"terminal_id\" : \"12201308-4075-41dd-8f11-8127c7900504\",\r\n            \"is_active\" : false\r\n        },\r\n        {\r\n            \"fuelling_point_id\": \"2b1ebbea-1b74-4d22-9f5d-75e90287ca75\",\r\n            \"terminal_id\" : \"f2232159-211e-4cbd-9006-be4f9f3771a8\",\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/fuellingpointterminal",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"fuellingpointterminal"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Fuelling Points Assignments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointterminal?parameters={\"filter\":{\"isactive\":true},\"order\":{\"lastupdate\":\"ASC\"},\"page\":1,\"pagesize\":10}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointterminal"
+							],
+							"query": [
+								{
+									"key": "parameters",
+									"value": "{\"filter\":{\"isactive\":true},\"order\":{\"lastupdate\":\"ASC\"},\"page\":1,\"pagesize\":10}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fuelling Point Assignments by Terminal Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointterminal/{{terminal_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointterminal",
+								"{{terminal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fuelling Point Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"fuelling_point_id\": \"b4ee6f06-cfc2-406c-b477-5cd2826d0773\",\r\n    \"terminal_id\" : \"f2232159-211e-4cbd-9006-be4f9f3771a8\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointterminal",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointterminal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Fuelling Point Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointterminal/{{fuelling_point_id}}/{{terminal_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointterminal",
+								"{{fuelling_point_id}}",
+								"{{terminal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Fuelling Point Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointterminal/{{fuelling_point_id}}/{{terminal_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointterminal",
+								"{{fuelling_point_id}}",
+								"{{terminal_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unit",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Unit List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"units\" : [\r\n        { \r\n            \"unit_id\" :  \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n            \"iso_80000\" : \"L,l\",\r\n            \"name\" : \"liter\", \r\n            \"symbol\" : \"L\",\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"unit_id\" :  \"1b62f8ac-8e99-43fb-8ece-cd4bdc0f455b\",\r\n            \"iso_80000\" : \"U,u\",\r\n            \"name\" : \"volt\", \r\n            \"symbol\" : \"V\",\r\n            \"is_active\" : false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/unit",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"unit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Unit List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"units\" : [\r\n        { \r\n            \"unit_id\": \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n            \"iso_80000\" : \"L,l\",\r\n            \"name\" : \"liter\", \r\n            \"symbol\" : \"L\",\r\n            \"is_active\" : false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/unit",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"unit"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Units",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/unit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"unit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Unit by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/unit/{{unit_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"unit",
+								"{{unit_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Unit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"unit_id\" :  \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n    \"iso_80000\" : \"L,l\",\r\n    \"name\" : \"liter\", \r\n    \"symbol\" : \"L\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/unit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"unit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Unit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"iso_80000\" : \"L,l\",\r\n    \"name\" : \"Liter\", \r\n    \"symbol\" : \"L\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/unit/{{unit_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"unit",
+								"{{unit_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Unit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/unit/{{unit_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"unit",
+								"{{unit_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Product List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"products\" : [\r\n        { \r\n            \"product_id\": \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n            \"code\" : \"Product1\",\r\n            \"description\" : \"Product # 1\", \r\n            \"short_description\" : \"Prod 1\",\r\n            \"forecourt_controller_product_id\" : 543,\r\n            \"color\" : \"(255,255,255)\",\r\n            \"sale_unit_id\" : \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"product_id\": \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n            \"code\" : \"Product2\",\r\n            \"description\" : \"Product # 2\", \r\n            \"short_description\" : \"Prod 2\",\r\n            \"forecourt_controller_product_id\" : 543,\r\n            \"color\" : \"(252,186,3)\",\r\n            \"sale_unit_id\" : \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Product List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"products\" : [\r\n        { \r\n            \"product_id\": \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n            \"code\" : \"Product1\",\r\n            \"description\" : \"Product # 1\", \r\n            \"short_description\" : \"Prod 1\",\r\n            \"forecourt_controller_product_id\" : 543,\r\n            \"color\" : \"(34,255,12)\",\r\n            \"sale_unit_id\" : \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"product_id\": \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n            \"code\" : \"Product2\",\r\n            \"description\" : \"Product # 2\", \r\n            \"short_description\" : \"Prod 2\",\r\n            \"forecourt_controller_product_id\" : 543,\r\n            \"color\" : \"(252,186,30)\",\r\n            \"sale_unit_id\" : \"26a82e85-e428-45da-95b1-e6dce3cd067c\",\r\n            \"status\": 1,\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/product/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"product_id\": \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"code\" : \"95\",\r\n    \"description\" : \"Sin Plomo 95\", \r\n    \"short_description\" : \"S/P95\",\r\n    \"forecourt_controller_product_id\" : 543,\r\n    \"color\" : \"rgb(64,255,0)\",\r\n    \"sale_unit_id\" : \"833ff0de-71c8-11eb-9439-0242ac130002\",\r\n    \"status\": 1,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\" : \"95\",\r\n    \"description\" : \"Sin Plomo 95\", \r\n    \"short_description\" : \"S/P95\",\r\n    \"forecourt_controller_product_id\" : 543,\r\n    \"color\" : \"rgb(132,255,99)\",\r\n    \"sale_unit_id\" : \"833ff0de-71c8-11eb-9439-0242ac130002\",\r\n    \"status\": 1,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/product/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/product/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Site",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Product SiteList",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productAssignments\" : [\r\n        { \r\n            \"product_id\": \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"product_id\": \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/productsite",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"productsite"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Product Site List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productAssignments\" : [\r\n        { \r\n            \"product_id\": \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"product_id\": \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n            \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/productsite",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"productsite"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Product Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/productsite",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productsite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Site by Product Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/productsite/{{product_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productsite",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"product_id\": \"3ce8e461-9e9d-4a6c-b382-d99b9a87d5e3\",\r\n    \"site_id\" : \"93ef1ca6-0e60-42f2-8644-fe9a9577c531\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/productsite",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productsite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Product Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/productsite/{{product_id}}/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productsite",
+								"{{product_id}}",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/productsite/{{product_id}}/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productsite",
+								"{{product_id}}",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tank",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Tank List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tanks\" : [\r\n        { \r\n                \"tank_id\": \"90ea92f4-4d4b-4c87-92ad-530af975107b\",\r\n                \"forecourt_controller_tank_id\" : 20,\r\n                \"code\" : \"Tank2\", \r\n                \"description\" : \"Tank 2\",\r\n                \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n                \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n                \"capacity\" : 20,\r\n                \"is_active\" : true\r\n        },\r\n        { \r\n                \"tank_id\": \"3bf039e2-caeb-11eb-9b34-c3747d51523b\",\r\n                \"forecourt_controller_tank_id\" : 20,\r\n                \"code\" : \"Tank3\", \r\n                \"description\" : \"Tank 3\",\r\n                \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n                \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n                \"capacity\" : 20,\r\n                \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/tank",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"tank"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Tank List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tanks\" : [\r\n       { \r\n                \"tank_id\": \"90ea92f4-4d4b-4c87-92ad-530af975107b\",\r\n                \"forecourt_controller_tank_id\" : 200,\r\n                \"code\" : \"Tank2\", \r\n                \"description\" : \"Tank 2\",\r\n                \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n                \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n                \"capacity\" : 200,\r\n                \"is_active\" : true\r\n        },\r\n        { \r\n                \"tank_id\": \"3bf039e2-caeb-11eb-9b34-c3747d51523b\",\r\n                \"forecourt_controller_tank_id\" : 200,\r\n                \"code\" : \"Tank3\", \r\n                \"description\" : \"Tank 3\",\r\n                \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n                \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n                \"capacity\" : 200,\r\n                \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/tank",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"tank"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Tanks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/tank",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tank by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/tank/{{tank_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tank",
+								"{{tank_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tank",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"tank_id\": \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\",\r\n    \"forecourt_controller_tank_id\" : 20,\r\n    \"code\" : \"Tank1\", \r\n    \"description\" : \"Tank 1\",\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"capacity\" : 20,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/tank",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Tank",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"forecourt_controller_tank_id\" : 20,\r\n    \"code\" : \"Tank1\", \r\n    \"description\" : \"Tank 1\",\r\n    \"site_id\" : \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"capacity\" : 50,\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/tank/{{tank_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tank",
+								"{{tank_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Tank",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/tank/{{tank_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tank",
+								"{{tank_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hose",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Hose List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"hoses\" : [\r\n        { \r\n            \"hose_id\": \"c42e7439-8e9e-4e9c-a6af-c1b96bc9d8fd\",\r\n            \"fuelling_point_id\" : \"bcf923f8-69d1-47ad-8291-b46a72f03e69\",\r\n            \"tank_id\" : \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\", \r\n            \"product_id\" : \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n            \"forecourt_controller_hose_id\" : 434,\r\n            \"code\" : \"Hose2\",\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"hose_id\": \"e7f83f8f-a5fa-420f-abd9-b03e437fe4cf\",\r\n            \"fuelling_point_id\" : \"2b1ebbea-1b74-4d22-9f5d-75e90287ca75\",\r\n            \"tank_id\" : \"90ea92f4-4d4b-4c87-92ad-530af975107b\", \r\n            \"product_id\" : \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n            \"forecourt_controller_hose_id\" : 564,\r\n            \"code\" : \"Hose3\",\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/hose",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"hose"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upt Hose List (Deprecated)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"hoses\" : [\r\n        { \r\n            \"hose_id\": \"c42e7439-8e9e-4e9c-a6af-c1b96bc9d8fd\",\r\n            \"fuelling_point_id\" : \"f2232159-211e-4cbd-9006-be4f9f3771b8\",\r\n            \"tank_id\" : \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\", \r\n            \"product_id\" : \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n            \"forecourt_controller_hose_id\" : 4564,\r\n            \"code\" : \"Hose2\",\r\n            \"is_active\" : true\r\n        },\r\n        { \r\n            \"hose_id\": \"e7f83f8f-a5fa-420f-abd9-b03e437fe4cf\",\r\n            \"fuelling_point_id\" : \"2b1ebbea-1b74-4d22-9f5d-75e90287ca75\",\r\n            \"tank_id\" : \"90ea92f4-4d4b-4c87-92ad-530af975107b\", \r\n            \"product_id\" : \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n            \"forecourt_controller_hose_id\" : 7889,\r\n            \"code\" : \"Hose3\",\r\n            \"is_active\" : true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/hose",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"hose"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Hoses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/hose",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hose"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hose by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/hose/{{hose_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hose",
+								"{{hose_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Hose",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"hose_id\": \"aab8142f-f541-42d7-9089-35d9212b6585\",\r\n    \"fuelling_point_id\" : \"b4ee6f06-cfc2-406c-b477-5cd2826d0773\",\r\n    \"tank_id\" : \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\", \r\n    \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"forecourt_controller_hose_id\" : 434,\r\n    \"code\" : \"8\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/hose",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hose"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Hose",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"fuelling_point_id\" : \"b4ee6f06-cfc2-406c-b477-5cd2826d0773\",\r\n    \"tank_id\" : \"1b29330c-b830-4a1a-b3aa-a19d00a3dd89\",\r\n    \"product_id\" : \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"forecourt_controller_hose_id\" : 434,\r\n    \"code\" : \"6\",\r\n    \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/hose/{{hose_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hose",
+								"{{hose_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Hose",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/hose/{{hose_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hose",
+								"{{hose_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Price",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Price List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"priceGroups\" : [\r\n        { \r\n            \"forecourt_price_group_id\": \"a5b6505c-cf08-11eb-8fd6-c775cb0cce9c\",\r\n            \"forecourt_price_group_scp\": 2,\r\n            \"is_forecourt_acknowledged\": true,\r\n            \"description\": \"Group 2\",\r\n            \"is_active\": true,\r\n            \"prices\": [\r\n                { \r\n                    \"price_id\": \"67d5d734-cf09-11eb-8fd7-2f516ff55593\",\r\n                    \"product_id\": \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n                    \"valid_from\": \"2021-07-10T08:06:15.000Z\",\r\n                    \"site_id\": \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n                    \"price\": \"0.343400000\",\r\n                    \"forecourt_price_group_id\": \"a5b6505c-cf08-11eb-8fd6-c775cb0cce9c\",\r\n                    \"is_active\": true\r\n                },\r\n                { \r\n                    \"price_id\": \"739bd1a4-cf09-11eb-8fd8-6f3912a0548b\",\r\n                    \"product_id\": \"fefb0c7e-1160-4457-8007-aae89b2bf9ab\",\r\n                    \"valid_from\": \"2021-07-10T08:06:15.000Z\",\r\n                    \"site_id\": \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n                    \"price\": \"0.343400000\",\r\n                    \"forecourt_price_group_id\": \"a5b6505c-cf08-11eb-8fd6-c775cb0cce9c\",\r\n                    \"is_active\": true\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/price",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"price"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Prices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/price",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Price by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/price/{{price_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"price",
+								"{{price_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"price_id\": \"4e590590-9b0d-49ad-98c3-f05184b0f568\",\r\n    \"product_id\": \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"site_id\": \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"valid_from\": \"2021-06-09 22:06:15\",\r\n    \"price\": 0.3434,\r\n    \"forecourt_price_group_id\": \"4d2932ce-4b99-43ce-a36d-78fadad85c28\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/price",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"product_id\": \"daac40bc-c771-4074-887c-0f9a6aff3bfb\",\r\n    \"site_id\": \"8efc59bb-c003-4a82-872c-37e5dead8053\",\r\n    \"valid_from\": \"2021-06-09 22:06:15\",\r\n    \"price\": 0.3434,\r\n    \"forecourt_price_group_id\": \"4d2932ce-4b99-43ce-a36d-78fadad85c28\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/price/{{price_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"price",
+								"{{price_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/price/{{price_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"price",
+								"{{price_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Price Group",
+			"item": [
+				{
+					"name": "Get All Price Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/pricegroup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pricegroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Price Group by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/pricegroup/{{price_group_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pricegroup",
+								"{{price_group_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Price Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"forecourt_price_group_id\": \"4d2932ce-4b99-43ce-a36d-78fadad85c28\",\r\n    \"forecourt_price_group_scp\": 2,\r\n    \"is_forecourt_acknowledged\": true,\r\n    \"description\": \"Group 2\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/pricegroup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pricegroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Price Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"forecourt_price_group_scp\": 2,\r\n    \"is_forecourt_acknowledged\": true,\r\n    \"description\": \"Price Group Updated\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/pricegroup/{{price_group_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pricegroup",
+								"{{price_group_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Price Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/pricegroup/{{price_group_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pricegroup",
+								"{{price_group_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale",
+			"item": [
+				{
+					"name": "Get Sale by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/sale/{{sale_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale",
+								"{{sale_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/sale",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"site_id\": \"7b6d7840-cad3-11eb-9b32-af50688a35e5\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/sale",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"status\" : 2 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/sale/{{sale_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale",
+								"{{sale_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/sale/{{sale_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale",
+								"{{sale_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sale Lines by Sale Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/sale/{{sale_id}}/saleline",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale",
+								"{{sale_id}}",
+								"saleline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sale Amount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/sale/{{sale_id}}/amount",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale",
+								"{{sale_id}}",
+								"amount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale line",
+			"item": [
+				{
+					"name": "Get Sale line by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/saleline/{{sale_line_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"saleline",
+								"{{sale_line_id}}"
+							]
+						}
+					},
+					"response": []
+				},                
+				{
+					"name": "Get All Sale Lines",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/saleline",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"saleline"
+							]
+						}
+					},
+					"response": []
+				},                                                              
+				{
+					"name": "Add Sale line",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"sale_id\": \"43b6f736-9752-47d1-ae6c-21ba0b1d1ad9\",\r\n    \"product_id\": \"4b967630-3b5e-4d5b-ae5e-5599c68abf9e\",\r\n    \"line_number_in_sale\": 1,\r\n    \"quantity\": 10,\r\n    \"price\" : 0.5,\r\n    \"fuelling_point_id\": \"bcf923f8-69d1-47ad-8291-b46a72f03e69\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/saleline",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"saleline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Sale line",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"line_number_in_sale\" : 2,\r\n    \"quantity\": 1,\r\n    \"price\" : 5\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/sale_line/{{sale_line_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sale_line",
+								"{{sale_line_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Sale line",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/saleline/{{sale_line_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"saleline",
+								"{{sale_line_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Country List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"countries\" : [\r\n  { \r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"name\": \"'España\",\r\n  \"iso_3166_1_2\": \"ES\",\r\n  \"iso_3166_1_3\": \"ESP\",\r\n  \"is_active\": true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/country",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"country"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Country by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/country/{{country_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"country",
+								"{{country_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"name\": \"'España\",\r\n  \"iso_3166_1_2\": \"ES\",\r\n  \"iso_3166_1_3\": \"ESP\",\r\n  \"is_active\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/country",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"country"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"'España\",\r\n  \"iso_3166_1_2\": \"ES\",\r\n  \"iso_3166_1_3\": \"ESP\",\r\n  \"is_active\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/country/{{country_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"country",
+								"{{country_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/country/{{country_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"country",
+								"{{country_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "State",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync State List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"states\" : [\r\n  { \r\n  \"state_id\": \"71fdea24-f680-4d6d-8af7-47bf01d1e378\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"name\": \"Barcelona\",\r\n  \"iso_3166_2\": \"ES-B\",\r\n  \"is_active\": true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/state",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"state"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get State by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/state/{{state_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"state",
+								"{{state_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add State",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"state_id\": \"71fdea24-f680-4d6d-8af7-47bf01d1e378\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"name\": \"Barcelona\",\r\n  \"iso_3166_2\": \"ES-B\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/state",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"state"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt State",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"name\": \"Barcelona\",\r\n  \"iso_3166_2\": \"ES-B\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/state/{{state_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"state",
+								"{{state_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove State",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/state/{{state_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"state",
+								"{{state_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TaxIdDocument",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync TaxIdDocument List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"taxIdDocuments\" : [\r\n  { \r\n  \"tax_id_document_id\": \"3259e2cd-4356-4281-89be-9568ff3207a1\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"type\": 1,\r\n  \"number\": \"12345678X\",\r\n  \"is_active\": true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/taxiddocument",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"taxiddocument"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get TaxIdDocument by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/taxiddocument/{{tax_id_document_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"taxiddocument",
+								"{{tax_id_document_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add TaxIdDocument",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tax_id_document_id\": \"3259e2cd-4356-4281-89be-9568ff3207a1\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"type\": 1,\r\n  \"number\": \"12345678X\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/taxiddocument",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"taxiddocument"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt TaxIdDocument",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tax_id_document_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"type\": 1,\r\n  \"number\": \"12345678X\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/taxiddocument/{{tax_id_document_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"taxiddocument",
+								"{{tax_id_document_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove TaxIdDocument",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/taxiddocument/{{tax_id_document_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"taxiddocument",
+								"{{tax_id_document_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BlockingCause",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync BlockingCause List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"blockingCauses\" : [\r\n  { \r\n  \"blocking_cause_id\": \"add27eea-08cd-4b1e-8a6b-dddc6ad2fbaf\",\r\n  \"name\": \"Insolvente\",\r\n  \"is_active\": true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/blockingcause",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"blockingcause"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get BlockingCause by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/blockingcause/{{blocking_cause_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"blockingcause",
+								"{{blocking_cause_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add BlockingCause",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"blocking_cause_id\": \"add27eea-08cd-4b1e-8a6b-dddc6ad2fbaf\",\r\n  \"name\": \"Insolvente\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/blockingcause",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"blockingcause"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt BlockingCause",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Insolvente\",\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/blockingcause/{{blocking_cause_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"blockingcause",
+								"{{blocking_cause_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove BlockingCause",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/blockingcause/{{blocking_cause_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"blockingcause",
+								"{{blocking_cause_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Customer List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customers\" : [\r\n  { \r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"name\": \"Pietro Test\",\r\n  \"tax_id_document_id\": \"3259e2cd-4356-4281-89be-9568ff3207a1\",\r\n  \"phone_number_1\": \"621123123\",\r\n  \"state_id\": \"71fdea24-f680-4d6d-8af7-47bf01d1e378\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"email\": \"ptest@test.com\",\r\n  \"is_blocked\": false,\r\n  \"is_assignable_to_sale\": true,\r\n  \"is_active\": true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/customer",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"customer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Customer by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/customer/{{customer_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0a\",\r\n  \"name\": \"Pietro Test\",\r\n  \"tax_id_document_id\": \"3259e2cd-4356-4281-89be-9568ff3207a1\",\r\n  \"phone_number_1\": \"621123123\",\r\n  \"state_id\": \"71fdea24-f680-4d6d-8af7-47bf01d1e378\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"email\": \"ptest@test.com\",\r\n  \"is_blocked\": false,\r\n  \"is_assignable_to_sale\": true,\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"name\": \"Pietro Test\",\r\n  \"tax_id_document_id\": \"3259e2cd-4356-4281-89be-9568ff3207a1\",\r\n  \"phone_number_1\": \"621123123\",\r\n  \"state_id\": \"71fdea24-f680-4d6d-8af7-47bf01d1e378\",\r\n  \"country_id\": \"9043cbe9-ffba-4afc-92b2-3babd96dd5dd\",\r\n  \"email\": \"ptest@test.com\",\r\n  \"is_blocked\": false,\r\n  \"is_assignable_to_sale\": true,\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/customer/{{customer_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/customer/{{customer_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FuellingPointTransaction",
+			"item": [
+				{
+					"name": "Get Fuelling Point Transaction by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointtransaction/{{fuelling_point_transaction_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointtransaction",
+								"{{fuelling_point_transaction_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Fuelling Point Transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointtransaction",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointtransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fuelling Point Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"site_id\" :  \"7b6d7840-cad3-11eb-9b32-af50688a35e5\",\r\n    \"fuelling_point_id\": \"7b6d7840-cad3-11eb-9b32-af50688a35e5\",\r\n    \"forecourt_controller_transaction_id\" : 2, \r\n    \"hose_id\": \"7b6d7840-cad3-11eb-9b32-af50688a35e5\",\r\n    \"product_id\": \"7b6d7840-cad3-11eb-9b32-af50688a35e5\",\r\n    \"terminal_id\" : \"7b6d7840-cad3-11eb-9b32-af50688a35e5\",\r\n    \"lift_date\" : \"2021-08-12 15:49:26\",\r\n    \"hang_date\" : \"2021-08-12 15:53:02\",\r\n    \"service_mode\": 1,\r\n    \"preset_quantity\" : 0,\r\n    \"preset_price\" : 0,\r\n    \"preset_amount\" : 0,\r\n    \"dispensed_quantity\" : 25,\r\n    \"dispensed_price\" : 2,\r\n    \"dispensed_amount\" : 50,\r\n    \"state\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/fuellingpointtransaction",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuellingpointtransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Fuelling Point Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"dispensed_quantity\" : 25,\r\n    \"dispensed_price\" : 3,\r\n    \"dispensed_amount\" : 75,\r\n    \"state\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/fuelling_point_transaction/{{fuelling_point_transaction_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuelling_point_transaction",
+								"{{fuelling_point_transaction_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Fuelling Point Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/fuelling_point_transaction/{{fuelling_point_transaction_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"fuelling_point_transaction",
+								"{{fuelling_point_transaction_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Site",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Customer Site List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerSites\" : [\r\n  { \r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"site_id\" : \"fa74efab-88c5-4664-a636-ed437d5531b1\",\r\n  \"is_active\" : true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/customersite",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"customersite"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Customer Site by Customer Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/customersite/{{customer_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customersite",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Customer Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"site_id\" : \"fa74efab-88c5-4664-a636-ed437d5531b1\",\r\n  \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/customersite",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customersite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Customer Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"is_active\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/customersite/{{customer_id}}/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customersite",
+								"{{customer_id}}",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Customer Site",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/customersite/{{customer_id}}/{{site_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customersite",
+								"{{customer_id}}",
+								"{{site_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Synchronization (DTH)",
+					"item": [
+						{
+							"name": "Sync Vehicle List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token-api-cloud}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"vehicles\" : [\r\n  { \r\n  \"vehicle_id\": \"52d5e104-ece0-4d83-9bbf-8f0dc2e2efbf\",\r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"plate\": \"1234BCD\",\r\n  \"ask_mileage\": false,\r\n  \"status\": 1,\r\n  \"is_assignable_to_sale\": true,\r\n  \"is_active\": true\r\n}\r\n]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/sync/vehicle",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sync",
+										"vehicle"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Vehicle by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/vehicle/{{vehicle_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"{{vehicle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Vehicle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vehicle_id\": \"52d5e104-ece0-4d83-9bbf-8f0dc2e2efbf\",\r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"plate\": \"1234BCD\",\r\n  \"ask_mileage\": false,\r\n  \"status\": 1,\r\n  \"is_assignable_to_sale\": true,\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/vehicle",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upt Vehicle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_id\": \"706c4b23-eb75-4abd-9db1-fe496276ae0e\",\r\n  \"plate\": \"1234BCD\",\r\n  \"ask_mileage\": false,\r\n  \"status\": 1,\r\n  \"is_assignable_to_sale\": true,\r\n  \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/vehicle/{{vehicle_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"{{vehicle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Vehicle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token-api-cloud}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/vehicle/{{vehicle_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"{{vehicle_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/healthcheck",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token-api-cloud",
+			"value": ""
+		}
+	]
+}

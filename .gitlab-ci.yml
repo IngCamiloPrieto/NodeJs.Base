@@ -1,0 +1,94 @@
+image: node:12.22.1-alpine3.10
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .yarn/
+
+stages:
+  - build
+  - test
+  - deploy
+
+# With the workflow rules we ensure that only executes for the deployment branches
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "development" || $CI_COMMIT_BRANCH == "QA" || $CI_COMMIT_BRANCH == "UAT"'
+      when: always
+    - when: never
+
+build project:
+  stage: build
+  before_script:
+    - apk add curl
+    - yarn install --production=true --cache-folder .yarn
+  script:
+    - npm install -g typescript
+    - yarn run build
+  artifacts:
+    untracked: false
+    expire_in: 1 weeks
+    paths:
+      - build/
+      - node_modules/
+
+test project:
+  stage: test
+  before_script:
+    - yarn install --cache-folder .yarn
+  script:
+    - echo "no working standalone tests"
+
+Deploy on DEV:
+  stage: deploy
+  environment:
+    name: DEV
+  dependencies:
+    - build project
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "development" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-keyscan "$OCTANPOS_API_HOST" > ~/.ssh/known_hosts
+    - echo "$OCTANPOS_DEPLOY_KEY" | ssh-add -
+  script:
+    - bash deploy_script.sh
+  tags:
+    - ssh
+    - deploy
+
+Deploy on QA:
+  stage: deploy
+  environment:
+    name: QA
+  dependencies:
+    - build project
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "QA" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-keyscan "$OCTANPOS_API_HOST" > ~/.ssh/known_hosts
+    - echo "$OCTANPOS_DEPLOY_KEY" | ssh-add -
+  script:
+    - bash deploy_script.sh
+  tags:
+    - ssh
+    - deploy
+
+Deploy on UAT:
+  stage: deploy
+  environment:
+    name: UAT
+  dependencies:
+    - build project
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "UAT" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-keyscan "$OCTANPOS_API_HOST" > ~/.ssh/known_hosts
+    - echo "$OCTANPOS_DEPLOY_KEY" | ssh-add -
+  script:
+    - bash deploy_script.sh
+  tags:
+    - ssh
+    - deploy

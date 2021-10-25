@@ -1,0 +1,14 @@
+{
+	"appenders": { 
+		"out": { 
+			"type": "file",
+			"filename": "logs.log"
+		}
+	},
+	"categories": {
+		"default": {
+			"appenders": ["out"],
+			"level": "all" 
+		} 
+	}
+}

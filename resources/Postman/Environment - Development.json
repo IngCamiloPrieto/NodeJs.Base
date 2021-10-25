@@ -1,0 +1,119 @@
+{
+	"id": "21853ac2-a2b3-4854-9f6f-9dc3ebd37552",
+	"name": "Development",
+	"values": [
+		{
+			"key": "host",
+			"value": "http://localhost:4004",
+			"enabled": true
+		},
+		{
+			"key": "code_sap",
+			"value": "2222222",
+			"enabled": true
+		},
+		{
+			"key": "token-api-cloud",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "terminal_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "site_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "user_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "fuelling_point_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "tank_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "price_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "price_group_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "unit_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "product_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "hose_id",
+			"value": "7b6d7840-cad3-11eb-9b32-af50688a35e5",
+			"enabled": true
+		},
+		{
+			"key": "sale_id",
+			"value": "43b6f736-9752-47d1-ae6c-21ba0b1d1ad9",
+			"enabled": true
+		},
+		{
+			"key": "sale_line_id",
+			"value": "47809e39-97d9-4401-a2ce-8478d740e883",
+			"enabled": true           
+		},
+		{
+			"key": "country_id",
+			"value": "9043cbe9-ffba-4afc-92b2-3babd96dd5dd",
+			"enabled": true
+		},
+		{
+			"key": "state_id",
+			"value": "71fdea24-f680-4d6d-8af7-47bf01d1e378",
+			"enabled": true
+		},
+		{
+			"key": "customer_id",
+			"value": "706c4b23-eb75-4abd-9db1-fe496276ae0e",
+			"enabled": true
+		},
+		{
+			"key": "vehicle_id",
+			"value": "52d5e104-ece0-4d83-9bbf-8f0dc2e2efbf",
+			"enabled": true
+		},
+		{
+			"key": "blocking_cause_id",
+			"value": "add27eea-08cd-4b1e-8a6b-dddc6ad2fbaf",
+			"enabled": true
+		},
+		{
+			"key": "tax_id_document_id",
+			"value": "3259e2cd-4356-4281-89be-9568ff3207a1",
+			"enabled": true
+		},
+		{
+			"key": "fuelling_point_transaction_id",
+			"value": "02c5677a-4dbb-4e3f-a8e4-c72378dafc53",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-07-07T11:11:51.961Z",
+	"_postman_exported_using": "Postman/8.7.0"
+}
