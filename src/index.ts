@@ -11,7 +11,7 @@ import swaggerDocs from './swagger/swaggerDocs';
 import unitRoutes from './routes/unit/index';
 
 //Import routes
-//import indexRoutes from './routes';
+import indexRoutes from './routes';
 
 
 export const APPLICATION = 'api-cloud';
@@ -55,8 +55,7 @@ class Server {
     routes(){
         //Define app Routes
         this.app.use("/api/v1/unit", unitRoutes);
-
-        
+        this.app.use("/",indexRoutes)
 
 
         //Catch 404 and forward to error handler

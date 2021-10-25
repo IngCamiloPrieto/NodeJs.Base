@@ -1,8 +1,13 @@
 import {Request, Response, NextFunction} from 'express';
-import { operationAPI } from '../../modules/entities/operationAPI';
+import { Result } from '../../utils/interfaces/result';
+
 
 class IndexController {
+
+    public result: Result<any>;
+
     constructor(){};
+
     public index (req : Request, res : Response, next : NextFunction) {
         res.render('index', {titte: 'Welcome to Cloud API POS'});
     };
@@ -15,7 +20,10 @@ class IndexController {
     };
 
     public healthckeck (req : Request, res : Response, next : NextFunction) {
-        res.status(200).json(new operationAPI('OK', 'It´s Works', 200));
+        let result = new Result<any>();
+        result.message.push('It´s Works');
+        result.statuscode=200;
+        res.status(200).json(result);                
     };
 }
 

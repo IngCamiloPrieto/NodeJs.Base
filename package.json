@@ -13,7 +13,7 @@
     "Cloud",
     "Multicompany"
   ],
-  "author": "Andrés Gómez <a.gomez@alvic.net>",
+  "author": "Camilo Prieto <cprieto@alvic.net>",
   "license": "UNLICENSED",
   "scripts": {
     "clean": "npx shx rm -rf build/",
