@@ -50,6 +50,7 @@ class Server {
 
         //Static Files
         this.app.use(express.static(path.join( __dirname, 'public')));
+
     }
 
     routes(){
@@ -72,7 +73,7 @@ class Server {
             // render the error page
             const errorcode = err.status || 500;
             res.status(errorcode);
-            res.render('error', {titte: 'Cloud API POS Error', code : errorcode, detail : err.message});
+            res.render('error', {titte: 'Configurador API Error', code : errorcode, detail : err.message});
             console.log('Error Generated');
         });
     }

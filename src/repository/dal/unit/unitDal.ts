@@ -2,10 +2,12 @@ import UnitDALAction from '../../../interfaces/contracts/unit/unitDALAction'
 import { UnitDTO } from '../../../interfaces/dto/unitDTO'
 import { DataAccess } from '../../../repository/utils/dataAccess'
 import { postgresHelper } from '../../../utils/extensions/postgresHelper'
-import { Sequelize, WhereOptions, Transaction } from 'sequelize/types'
+import { Sequelize, WhereOptions, Transaction } from 'sequelize'
 import { Op } from 'sequelize'
 import { Unit } from '../../context/initModels'
+import { injectable } from 'inversify'
 
+@injectable()
 export default class UnitDAL extends DataAccess implements UnitDALAction {
 
     constructor(transaction: Transaction) {

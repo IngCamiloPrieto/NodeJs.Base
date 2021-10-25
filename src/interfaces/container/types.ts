@@ -1,5 +1,5 @@
 const TYPES = {
-    UnitBl: Symbol.for("UnitBLAction"),
-    UnitDAL: Symbol.for("UnitDALAction")    
+    UnitBLAction: Symbol.for("UnitBLAction"),
+    UnitDALAction: Symbol.for("UnitDALAction")    
 };
 export { TYPES };

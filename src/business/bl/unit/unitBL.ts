@@ -6,22 +6,23 @@ import UnitBLAction from '../../../interfaces/contracts/unit/unitBLAction'
 import BusinessBase from '../../../utils/wrappers/businessBase'
 import { Result } from '../../../utils/interfaces/result'
 import { BusinessError } from '../../../utils/interfaces/businessError'
-import { container } from '../../../interfaces/container/container' 
-import { injectable, inject } from "inversify"
+import { container } from '../../../interfaces/container/inversify.config' 
+import { injectable, inject, interfaces, decorate } from "inversify"
 import { TYPES } from "../../../interfaces/container/types"
 import "reflect-metadata";
-
+decorate(injectable(), "UnitBLAction");
 @injectable()
 export class UnitBL extends BusinessBase implements UnitBLAction {
 
     private response: Result<UnitDTO>;
+    //private unitRepository: UnitDALAction;
     private unitRepository: UnitDALAction;
-    //@inject(TYPES.UnitDAL) private unitRepository: UnitDALAction;
 
-    constructor(connectionString: string, unitRepository?: UnitDALAction) {
+    constructor(connectionString: string,@inject(TYPES.UnitDALAction) repository?: UnitDALAction) {
         super(connectionString);
-        this.response = new Result<UnitDTO>();
-        this.unitRepository = unitRepository != null ? unitRepository : new UnitDAL(this.transaction);
+        this.response = new Result<UnitDTO>();       
+        this.unitRepository=repository;
+        //this.unitRepository = unitRepository != null ? unitRepository : new UnitDAL(this.transaction);
     }
 
     public findUnit = async (unitId: string): Promise<Result<UnitDTO>> => {
@@ -104,5 +105,7 @@ export class UnitBL extends BusinessBase implements UnitBLAction {
 
     }
 }
+
+
 
 export default UnitBL;
