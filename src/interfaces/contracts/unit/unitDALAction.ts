@@ -1,6 +1,6 @@
 import { UnitDTO } from "../../dto/unitDTO";
 
-export default interface UnitDALAction {    
+export  interface UnitDALAction {    
     findUnit: (unitId: string) => Promise<UnitDTO | null>
     addUnit: (unit: UnitDTO) => Promise<UnitDTO>
     updateUnit: (unit: UnitDTO) => Promise<UnitDTO>

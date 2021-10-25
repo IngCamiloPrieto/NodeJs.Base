@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import UnitBLAction from '../../../interfaces/contracts/unit/unitBLAction';
+import {UnitBLAction} from '../../../interfaces/contracts/unit/unitBLAction';
 import UnitBL from '../../../business/bl/unit/unitBL';
 import { UnitDTO } from '../../../interfaces/dto/unitDTO';
 import { ControllerBase } from '../../../utils/wrappers/controllerBase';

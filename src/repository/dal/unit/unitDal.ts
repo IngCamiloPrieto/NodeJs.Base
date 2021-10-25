@@ -1,4 +1,4 @@
-import UnitDALAction from '../../../interfaces/contracts/unit/unitDALAction'
+import {UnitDALAction} from '../../../interfaces/contracts/unit/unitDALAction'
 import { UnitDTO } from '../../../interfaces/dto/unitDTO'
 import { DataAccess } from '../../../repository/utils/dataAccess'
 import { postgresHelper } from '../../../utils/extensions/postgresHelper'
@@ -6,11 +6,14 @@ import { Sequelize, WhereOptions, Transaction } from 'sequelize'
 import { Op } from 'sequelize'
 import { Unit } from '../../context/initModels'
 import { injectable } from 'inversify'
+import { TYPES } from '../../../interfaces/container/types'
+import "reflect-metadata"
+import { transaction } from '../../../utils/wrappers/businessBase'
 
 @injectable()
-export default class UnitDAL extends DataAccess implements UnitDALAction {
+export  class UnitDAL extends DataAccess implements UnitDALAction {
 
-    constructor(transaction: Transaction) {
+    constructor() {
         super();
         this.transaction = transaction;
         this.filterFields = this.getFieldsFromModel(Unit.rawAttributes, ['unit_id', 'iso_80000','name','symbol']);

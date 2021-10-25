@@ -1,7 +1,7 @@
 import { Result } from "../../../utils/interfaces/result";
 import { UnitDTO } from "../../dto/unitDTO";
 
-export default interface UnitBLAction {    
+export  interface UnitBLAction {    
     findUnit: (unitId: string) => Promise<Result<UnitDTO | null>>
     addUnit: (unit: UnitDTO) => Promise<Result<UnitDTO>>
     updateUnit: (unit: UnitDTO) => Promise<Result<UnitDTO>>

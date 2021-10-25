@@ -1,8 +1,7 @@
 import { Transaction } from 'sequelize'
-import UnitDALAction from '../../../interfaces/contracts/unit/unitDALAction'
-import UnitDAL from '../../../repository/dal/unit/unitDal'
+import {UnitDALAction} from '../../../interfaces/contracts/unit/unitDALAction'
 import { UnitDTO } from '../../../interfaces/dto/unitDTO'
-import UnitBLAction from '../../../interfaces/contracts/unit/unitBLAction'
+import {UnitBLAction} from '../../../interfaces/contracts/unit/unitBLAction'
 import BusinessBase from '../../../utils/wrappers/businessBase'
 import { Result } from '../../../utils/interfaces/result'
 import { BusinessError } from '../../../utils/interfaces/businessError'
@@ -10,23 +9,22 @@ import { container } from '../../../interfaces/container/inversify.config'
 import { injectable, inject, interfaces, decorate } from "inversify"
 import { TYPES } from "../../../interfaces/container/types"
 import "reflect-metadata";
-decorate(injectable(), "UnitBLAction");
+
+
 @injectable()
 export class UnitBL extends BusinessBase implements UnitBLAction {
 
-    private response: Result<UnitDTO>;
-    //private unitRepository: UnitDALAction;
+    private response: Result<UnitDTO>;    
     private unitRepository: UnitDALAction;
 
-    constructor(connectionString: string,@inject(TYPES.UnitDALAction) repository?: UnitDALAction) {
+    constructor(connectionString: string) {
         super(connectionString);
-        this.response = new Result<UnitDTO>();       
-        this.unitRepository=repository;
-        //this.unitRepository = unitRepository != null ? unitRepository : new UnitDAL(this.transaction);
+        this.response = new Result<UnitDTO>();    
+        this.unitRepository= container.get<UnitDALAction>(TYPES.UnitDALAction);                             
     }
 
     public findUnit = async (unitId: string): Promise<Result<UnitDTO>> => {
-        return await this.executionDB<Result<UnitDTO>>(async () => {
+        return await this.executionDB<Result<UnitDTO>>(async () => {            
             let unit = await this.unitRepository.findUnit(unitId);
             unit != null ? this.response.data.push(unit) : this.response.data = [];
             this.response.count = (this.response.data) ? this.response.data.length : 0;
@@ -36,7 +34,7 @@ export class UnitBL extends BusinessBase implements UnitBLAction {
     }
 
     public findAll = async (filterParams?: string): Promise<Result<UnitDTO>> => {
-        return await this.executionDB<Result<UnitDTO>>(async () => {
+        return await this.executionDB<Result<UnitDTO>>(async () => {            
             let units = await this.unitRepository.findAll(filterParams);
             units != null ? this.response.data = units : this.response.data = [];
             this.response.count = (this.response.data) ? this.response.data.length : 0;

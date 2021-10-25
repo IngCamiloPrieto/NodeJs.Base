@@ -1,8 +1,9 @@
 import { Sequelize, Transaction } from 'sequelize'
 import { instanceDBConnection } from '../../repository/context/Context'
+export var transaction: Transaction;
+
 export default abstract class BusinessBase {
 
-    public transaction: Transaction;
     public connectionString: string;
     public sequelize: Sequelize;
 
@@ -14,7 +15,7 @@ export default abstract class BusinessBase {
 
     async executionDB<T>(body: () => Promise<T>, isolationLevel: Transaction.ISOLATION_LEVELS): Promise<T> {
         let response = await this.sequelize.transaction({ isolationLevel: isolationLevel }, async (tran) => {
-            this.transaction = tran;
+            transaction = tran;
             try {
                 let data = await body();
                 return data;
@@ -28,3 +29,4 @@ export default abstract class BusinessBase {
         return response
     }
 }
+

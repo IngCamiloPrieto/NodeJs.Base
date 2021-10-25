@@ -1,6 +1,6 @@
 import { instance, mock, verify, when } from 'ts-mockito';
 import UnitBL from '../../src/business/bl/unit/unitBL';
-import UnitDALAction from '../../src/interfaces/contracts/unit/unitDALAction';
+import {UnitDALAction} from '../../src/interfaces/contracts/unit/unitDALAction';
 import { MockUnit } from './Mock/Entities';
 import { expect } from 'chai';
 const config = require('../config.json');
@@ -20,7 +20,7 @@ export class UnitTestBl {
     
         beforeEach(() => {
             unitDAL = mock<UnitDALAction>();
-            unitBL = new UnitBL(TestConfig.bdconfig_cnxstring, instance(unitDAL));  
+            unitBL = new UnitBL(TestConfig.bdconfig_cnxstring);  
             mockUnitData = [new MockUnit(),new MockUnit(),new MockUnit()];
             mockUnit = new MockUnit('b1c4a89e-4905-5e3c-b57f-dc92627d011e');
             mockUnitProcessed = new MockUnit('b1c4a89e-4905-5e3c-b57f-dc92627d011e');

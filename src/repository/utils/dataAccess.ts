@@ -1,6 +1,8 @@
+import { injectable } from 'inversify';
 import { Model, Order, WhereOptions, AndOperator, fn, Op, OrOperator, WhereOperators, col, Transaction} from 'sequelize';
 import { Utils } from '../../utils/extensions';
 
+@injectable()
 export class DataAccess {
   private where: WhereOptions;
   private order: Order;
